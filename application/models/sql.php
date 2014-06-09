@@ -65,9 +65,8 @@ class Sql extends CI_Model {
         return false;
     }
     
-    public function delete($sql=''){
-        $this->db->query($sql);
-        if($this->db->affected_row() == 0){
+    public function delete($sql=''){        
+        if($this->db->query($sql)){
             return true;
         }
         return false;

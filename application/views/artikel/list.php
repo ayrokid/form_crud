@@ -16,8 +16,6 @@
 
 <script type="text/javascript">
 function cari(){
-    $('#grid').datagrid('load',{
-        cari: $('#nama').val()
-    });
+    $('#grid').datagrid('load',{    });
 }
 </script>

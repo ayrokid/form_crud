@@ -7,10 +7,10 @@ function confirm_page(page,msg,url){
                 timeout: 10000,
                 success: function(data){
                     var data = eval('(' + data + ')');
-                    if(data.back==='true'){
+                    if(data.back == 'true'){
                         $.messager.alert('Info','Successfully','info', function(){ window.location = url; });                            
                     }else{
-                        $.messager.alert('Error',data.msg,'error');
+                        $.messager.alert('Error',data.msg,'error', function() { window.location = url; } );
                     }
                 },error: function(x, t, m) {
                     if(t==="timeout") {

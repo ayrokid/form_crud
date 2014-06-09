@@ -29,39 +29,13 @@ Class Artikel extends Application {
         $hasil = $this->sql->select_result($sql);  
         foreach($hasil as $val){
             $link = "";
-            $link .= "<a href='javascript:void(0)' onclick='load_page(\"".site_url('artikel/edit/'.$val->arid)."\")' class='edit' title='edit'></a>&nbsp;&nbsp;";
+            $link .= anchor("artikel/edit/$val->arid", '&nbsp;', array('class'=>'edit')).'&nbsp;&nbsp;';
             $link .= "<a href='javascript:void(0)' onclick='confirm_page(\"".site_url('artikel/delete/'.$val->arid)."\",\"Data removed?\",\"".site_url('artikel')."\")' class='delete' title='delete'></a>&nbsp;&nbsp;";
             
             $row[] = array("ar_title" => $val->ar_title, "date" => dateToIndo($val->ar_exp_date), "action" => $link);
         }
         $result['rows'] = $row;   
         echo json_encode($result);
-    }
-    
-    function image(){
-        //Check if we are getting the image
-        if(isset($_FILES['image'])){
-            //Get the image array of details
-            $img = rand().$_FILES['image']["name"]; 
-            //The new path of the uploaded image, rand is just used for the sake of it
-            
-            $path = "./upload/media/" . $img;
-            //Move the file to our new path
-            move_uploaded_file($_FILES['image']['tmp_name'],$path);
-            //Get image info, reuiqred to biuld the JSON object
-            $data = getimagesize($path);
-            //The direct link to the uploaded image, this might varyu depending on your script location    
-            $link = path_upload().$img;
-            //Here we are constructing the JSON Object
-            $res = array("upload" => array(
-                                    "links" => array("original" => $link),
-                                    "image" => array("width" => $data[0],
-                                                     "height" => $data[1]
-                                                    )                              
-                        ));
-            //echo out the response :)
-            echo json_encode($res);
-        }
     }
 
     public function baru(){
@@ -87,17 +61,20 @@ Class Artikel extends Application {
         redirect('artikel', 'refresh');
     }
     
-    public function edit_miscell(){
-        $code = anti_injection($this->uri->segment(3));
-        $data['data']   = $this->mod_transaksi->getMiscell($code);
-        $this->load->view("transaksi/editMiscell", $data);
+    public function edit(){
+        $code = filter_string($this->uri->segment(3));
+        $this->subTitle = 'Ubah Artikel';
+        $this->content  = "artikel/edit";
+        $this->dataContent = $this->sql->select_row("SELECT * FROM artikel where arid=$code limit 1 ");
+        $this->view();
     }
     
-    public function delete_miscell(){
+    public function delete(){
         $msg    = 'failed';
         $back   = 'false';
-        $code = anti_injection($this->uri->segment(3));
-        if($this->mod_transaksi->deleteMiscell($code) == true){
+        $code   = filter_string($this->uri->segment(3));
+        $sql    = "DELETE FROM artikel where arid=$code ";
+        if($this->sql->delete($sql) == true){
             $msg    = 'Successfully';
             $back   = 'true';
         }
