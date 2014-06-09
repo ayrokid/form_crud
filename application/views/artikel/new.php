@@ -2,6 +2,7 @@
 if (!defined('BASEPATH')) {
     exit('No direct script access allowed');
 }
+chmod('upload/media', 0755);
 ?>
 <form id="form" action="<?php echo site_url("artikel/save/i");?>" method="post">
 <center><span id="form-info"></span></center>
