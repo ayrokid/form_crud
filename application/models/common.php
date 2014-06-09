@@ -20,5 +20,17 @@ class Common extends CI_Model{
             return $sql->row();
         }
         
+        function saveArtikel($data, $kode){
+            if($kode == 'i'){
+                $this->db->insert("artikel", $data);
+            }else{
+                $this->db->update("artikel", $data, array('arid' => $kode));
+            }
+            if($this->db->affected_rows() > 0){
+                return true;
+            }
+            return false;
+        }
+        
 }
-?>
+
