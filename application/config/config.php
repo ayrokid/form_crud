@@ -36,11 +36,11 @@ $config['path_upload']	=	$config['base_url'].'upload/media';
  * Basic Setting of System
  * -----------------------------------------------------------------------
  */
-$config['name_system']  =   "Silvatel";
-$config['company']		=   "Vasanti Seminyak Resort";
-$config['address']      =   "Jl. Petitenget, Gg. Cendrawasih No. 99 North Kuta, Denpasar, Bali";
-$config['telepon']      =   "+62 (361) 846 6966";
-$config['version']		=   "Beta (1.0)";
+$config['name_system']  =   "CMS Editor";
+$config['company']	=   "Silvanix Studio";
+$config['address']      =   "Surakarta";
+$config['telepon']      =   "085 725 523 023";
+$config['version']	=   "Beta (1.0)";
 $config['developer']	=   "silvanix.com";
 
 /*
