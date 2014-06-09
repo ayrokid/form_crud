@@ -1,0 +1,8 @@
+#cetak {
+    background: transparent url('../images/print.png') left top no-repeat; 
+    padding-left: 20px;
+    cursor: pointer;
+    font-family: arial;
+}
+#cetak a {text-decoration: none;}
+#cetak a:hover {color: #cc0000;}
