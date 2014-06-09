@@ -1,90 +1,58 @@
-function nama_field(data){  
-    var name= data;   
-    var num = $('input[name='+name+']').val();
-    num = num.toString().replace(/\$|\,/g,'');
-    if(isNaN(num))
-        num = "0";
-    sign = (num == (num = Math.abs(num)));
-    num = Math.floor(num*100+0.50000000001);
-    cents = num%100;
-    num = Math.floor(num/100).toString();
-    if(cents<12)
-        cents = "0" + cents;
-    for (var i = 0; i < Math.floor((num.length-(1+i))/3); i++)
-        num = num.substring(0,num.length-(4*i+3))+','+
-        num.substring(num.length-(4*i+3));
-    $('input[name='+name+']').val((((sign)?'':'-') + num)).css('text-align','right');
+function confirm_page(page,msg,url){
+    $.messager.confirm('Confirm', msg, function(r){
+        if (r){
+            $.ajax({
+                url: page,
+                dataType: "html",
+                timeout: 10000,
+                success: function(data){
+                    var data = eval('(' + data + ')');
+                    if(data.back==='true'){
+                        $.messager.alert('Info','Successfully','info', function(){ window.location = url; });                            
+                    }else{
+                        $.messager.alert('Error',data.msg,'error');
+                    }
+                },error: function(x, t, m) {
+                    if(t==="timeout") {
+                        $("#form-info").hide();
+                        $.messager.alert('Error','timeout','error');
+                    }else {
+                        $("#form-info").hide();
+                        $.messager.alert('Error',m,'error');
+                    }
+                }   
+            });
+        }
+    });
 }
-        
-function format_idr(angka){  
-    angka = angka+"";
-    var pecah = angka.split(".");
-    var uang;
-    var pjg;
-    var koma;
-    if(pecah.length > 1){
-        pjg   = pecah[0].length;
-        angka = pecah[0];
-        koma  = "."+pecah[1];
-    }else{
-        pjg = angka.length;
-        koma = ".00";
-    }
-    if( pjg === 4 ){
-        uang = angka.substr(0,1)+","+angka.substr(1,4);
-    }else if( pjg === 5 ){
-        uang = angka.substr(0,2)+","+angka.substr(2,5);
-    }else if( pjg === 6 ) {
-        uang = angka.substr(0,3)+","+angka.substr(3,6); 
-    }else if( pjg === 7 ) {
-        uang = angka.substr(0,1)+","+angka.substr(1,3)+","+angka.substr(4,3);   
-    }else if( pjg === 8 ) {
-        uang = angka.substr(0,2)+","+angka.substr(2,3)+","+angka.substr(5,3);   
-    }else if( pjg === 9 ) {
-        uang = angka.substr(0,3)+","+angka.substr(3,3)+","+angka.substr(6,3);   
-    }else if( pjg === 10 ) {
-        uang = angka.substr(0,1)+","+angka.substr(1,3)+","+angka.substr(4,3)+","+angka.substr(7,3);   
-    }else if( pjg === 11 ) {
-        uang = angka.substr(0,2)+","+angka.substr(2,3)+","+angka.substr(5,3)+","+angka.substr(8,3);   
-    }else if( pjg === 12 ) {
-        uang = angka.substr(0,3)+","+angka.substr(3,3)+","+angka.substr(6,3)+","+angka.substr(9,3);   
-    }else if( pjg === 13 ) {
-        uang = angka.substr(0,1)+","+angka.substr(1,3)+","+angka.substr(4,3)+","+angka.substr(7,3)+","+angka.substr(10,3);   
-    }else{
-        uang = angka;
-    }
-    return uang;
+function load_page(url){
+    $("#here").html("<center><p class='load'></p></center>");
+    $.ajax({
+        url: url,
+        dataType: "HTML",                       
+        success: function(data){
+            $("#here").html(data);
+        }         
+    });
 }
-
-function format_int(num) {
-    num = num+"";
-    num = num.toString().replace( /,/g, "" );
-    var pecah = num.split(".");
-    var angka =   pecah[0];
-    var pjg   = angka.length;
-    var uang  = 0;
-    if( pjg === 4 ){
-        uang = angka.substr(0,1)+","+angka.substr(1,4);
-    }else if( pjg === 5 ){
-        uang = angka.substr(0,2)+","+angka.substr(2,5);
-    }else if( pjg === 6 ) {
-        uang = angka.substr(0,3)+","+angka.substr(3,6); 
-    }else if( pjg === 7 ) {
-        uang = angka.substr(0,1)+","+angka.substr(1,3)+","+angka.substr(4,3);   
-    }else if( pjg === 8 ) {
-        uang = angka.substr(0,2)+","+angka.substr(2,3)+","+angka.substr(5,3);   
-    }else if( pjg === 9 ) {
-        uang = angka.substr(0,3)+","+angka.substr(3,3)+","+angka.substr(6,3);   
-    }else if( pjg === 10 ) {
-        uang = angka.substr(0,1)+","+angka.substr(1,3)+","+angka.substr(4,3)+","+angka.substr(7,3);   
-    }else if( pjg === 11 ) {
-        uang = angka.substr(0,2)+","+angka.substr(2,3)+","+angka.substr(5,3)+","+angka.substr(8,3);   
-    }else if( pjg === 12 ) {
-        uang = angka.substr(0,3)+","+angka.substr(3,3)+","+angka.substr(6,3)+","+angka.substr(9,3);   
-    }else if( pjg === 13 ) {
-        uang = angka.substr(0,1)+","+angka.substr(1,3)+","+angka.substr(4,3)+","+angka.substr(7,3)+","+angka.substr(10,3);   
-    }else{
-        uang = angka;
-    }
-    return uang;
+function new_page(page, pjg){
+    var params  = 'width='+pjg;
+    params += ', height=650';
+    params += ', fullscreen=yes,scrollbars=yes';
+    window.open(page,'_blank', params);
+}  
+function myformatter(date){
+    var y = date.getFullYear();
+    var m = date.getMonth()+1;
+    var d = date.getDate();
+    return (d<10?('0'+d):d)+'/'+(m<10?('0'+m):m)+'/'+y;
+}
+function datetime(date){
+    var y = date.getFullYear();
+    var m = date.getMonth()+1;
+    var d = date.getDate();
+    var h = date.getHours();
+    var i = date.getMinutes();
+    var s = date.getSeconds();
+    return (d<10?('0'+d):d)+'/'+(m<10?('0'+m):m)+'/'+y+' '+h+':'+i+':'+s;
 }
