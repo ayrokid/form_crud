@@ -63,7 +63,7 @@ Class Artikel extends Application {
             echo json_encode($res);
         }
     }
-    
+
     public function baru(){
         $this->subTitle = 'Artikel Baru';
         $this->content  = "artikel/new";
