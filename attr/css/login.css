@@ -1,27 +1,26 @@
 /* 
     Document   : style
-    Created on : 14 Jul 13, 13:24:57
+    Created on : 19 Jul 14, 10:24:57
     Author     : yanun
     Description:
         Purpose of the stylesheet follows.
 */
 
 body {
-        font: 13px/20px normal Helvetica, Arial, sans-serif;
-        color: #000;
-        background: transparent url('../images/bg4.png') left top no-repeat; 
-
+    font: 13px/20px normal Helvetica, Arial, sans-serif;
+    color: #000;
 }
 
 h1 {
-        color: #000;
-        background-color: transparent;
-        border-bottom: 1px solid #D0D0D0;
-        font-size: 19px;
-        font-weight: normal;
-        margin: 0 0 1px 0;
-        padding: 14px 15px 10px 15px;
+    color: #000;
+    background-color: transparent;
+    border-bottom: 1px solid #D0D0D0;
+    font-size: 19px;
+    font-weight: normal;
+    margin: 0 0 1px 0;
+    padding: 14px 15px 10px 15px;
 }
+
 h1 span{color: red;}
 
 form a { text-decoration: none;}
@@ -36,16 +35,16 @@ input {
 }
 
 #body{
-        margin: 0 15px;
+    margin: 0 15px;
 }
 
 p.footer{
-        text-align: right;
-        font-size: 11px;
-        border-top: 1px solid #D0D0D0;
-        line-height: 32px;
-        padding: 0 10px 0 10px;
-        margin: 20px 0 0 0;
+    text-align: right;
+    font-size: 11px;
+    border-top: 1px solid #D0D0D0;
+    line-height: 32px;
+    padding: 0 10px 0 10px;
+    margin: 20px 0 0 0;
 }
 
 .title {
@@ -64,11 +63,11 @@ p.footer{
 .title strong {background-color: #f15929; padding: 2px 5px; color: #ffffff;}
 
 #container{
-        margin: 60px auto;
-        width: 340px;
-        border: 1px solid #D0D0D0;     
-        position: relative;   
-        background-color: #ffffff;        
+    margin: 60px auto;
+    width: 340px;
+    border: 1px solid #D0D0D0;     
+    position: relative;   
+    background-color: #ffffff;        
 }
 
 #container:before, #container:after{
@@ -127,7 +126,7 @@ p.footer{
 }
 
 .bottom {
-    margin-top: 100px;
+    margin-top: 150px;
     margin-right: 20px;
     text-align: right;
     color: #4F5155;
@@ -136,4 +135,4 @@ p.footer{
 .bottom a:hover {color: #ff0000;}
 
 
-	
+
