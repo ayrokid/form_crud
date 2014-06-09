@@ -17,11 +17,18 @@
     <link href="<?php echo path_css("datepicker.css"); ?>" rel="stylesheet" />
     <script src="<?php echo path_js('jquery.min.js'); ?>" type="text/javascript"></script>
     <script src="<?php echo path_js('jquery-ui.js'); ?>" type="text/javascript"></script>
+    <script src="<?php echo path_js('nicEdit.js'); ?>" type="text/javascript"></script>
     
     <link rel="stylesheet" type="text/css" href="<?php echo path_js('easyui/themes/default/easyui.css'); ?>">
     <link rel="stylesheet" type="text/css" href="<?php echo path_js('easyui/themes/icon.css'); ?>">
     <script type="text/javascript" src="<?php echo path_js('easyui/jquery.easyui.min.js'); ?>"></script>
     <script src="<?php echo path_js('fun.jquery.js'); ?>" type="text/javascript"></script>
+    <script>
+    //<![CDATA[
+    bkLib.onDomLoaded(function() {
+        new nicEditor({iconsPath: '<?php echo path_img('nicEditorIcons.gif'); ?>' ,uploadURI: "<?php echo base_url(); ?>nicUpload.php"}).panelInstance('content');
+    });
+    //]]>
     </script>
 </head>
 <body>

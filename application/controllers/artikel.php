@@ -38,6 +38,32 @@ Class Artikel extends Application {
         echo json_encode($result);
     }
     
+    function image(){
+        //Check if we are getting the image
+        if(isset($_FILES['image'])){
+            //Get the image array of details
+            $img = rand().$_FILES['image']["name"]; 
+            //The new path of the uploaded image, rand is just used for the sake of it
+            
+            $path = "./upload/media/" . $img;
+            //Move the file to our new path
+            move_uploaded_file($_FILES['image']['tmp_name'],$path);
+            //Get image info, reuiqred to biuld the JSON object
+            $data = getimagesize($path);
+            //The direct link to the uploaded image, this might varyu depending on your script location    
+            $link = path_upload().$img;
+            //Here we are constructing the JSON Object
+            $res = array("upload" => array(
+                                    "links" => array("original" => $link),
+                                    "image" => array("width" => $data[0],
+                                                     "height" => $data[1]
+                                                    )                              
+                        ));
+            //echo out the response :)
+            echo json_encode($res);
+        }
+    }
+    
     public function baru(){
         $this->subTitle = 'Artikel Baru';
         $this->content  = "artikel/new";
