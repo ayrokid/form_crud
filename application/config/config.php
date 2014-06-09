@@ -14,7 +14,34 @@
 | path to your installation.
 |
 */
-$config['base_url']	= '';
+$protocol = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
+$domain   = $_SERVER['HTTP_HOST'];
+
+$config['base_url'] = $protocol.$domain.preg_replace('@/+$@', '', dirname($_SERVER['SCRIPT_NAME'])).'/';
+
+/*
+|--------------------------------------------------------------------------
+| Path File
+|--------------------------------------------------------------------------
+*/
+$path_media             =	$config['base_url'].'attr/';
+$config['path_js']	=	$path_media.'js/';
+$config['path_css']	=	$path_media.'css/';
+$config['path_img']	=	$path_media.'images/';
+$config['path_font']	=	$path_media.'fonts/';
+$config['path_upload']	=	$config['base_url'].'upload/media';
+
+/*
+ * -----------------------------------------------------------------------
+ * Basic Setting of System
+ * -----------------------------------------------------------------------
+ */
+$config['name_system']  =   "Silvatel";
+$config['company']		=   "Vasanti Seminyak Resort";
+$config['address']      =   "Jl. Petitenget, Gg. Cendrawasih No. 99 North Kuta, Denpasar, Bali";
+$config['telepon']      =   "+62 (361) 846 6966";
+$config['version']		=   "Beta (1.0)";
+$config['developer']	=   "silvanix.com";
 
 /*
 |--------------------------------------------------------------------------
@@ -180,7 +207,7 @@ $config['directory_trigger']	= 'd'; // experimental not currently in use
 | your log files will fill up very fast.
 |
 */
-$config['log_threshold'] = 0;
+$config['log_threshold'] = 1;
 
 /*
 |--------------------------------------------------------------------------
@@ -224,7 +251,8 @@ $config['cache_path'] = '';
 | MUST set an encryption key.  See the user guide for info.
 |
 */
-$config['encryption_key'] = '';
+
+$config['encryption_key'] = 'nddnaodaodad';
 
 /*
 |--------------------------------------------------------------------------
