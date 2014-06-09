@@ -152,7 +152,7 @@ if (!function_exists('dateToIndo')) {
         if(count($bagi)>1){
             $pecah = explode('-', $bagi[0]);
             if (count($pecah) > 2) {
-                $getDate = $pecah[2] . '/' . $pecah[1] . '/' . $pecah[0];
+                $getDate = $pecah[2] . '-' . $pecah[1] . '-' . $pecah[0];
             } else {
                 $pecah = explode('/', $date);
                 if(count($pecah) > 2){
@@ -165,7 +165,7 @@ if (!function_exists('dateToIndo')) {
         }else{
             $pecah = explode('-', $date);
             if (count($pecah) > 2) {
-                $getDate = $pecah[2] . '/' . $pecah[1] . '/' . $pecah[0];
+                $getDate = $pecah[2] . '-' . $pecah[1] . '-' . $pecah[0];
             } else {
                 $pecah = explode('/', $date);
                 if(count($pecah) > 2){

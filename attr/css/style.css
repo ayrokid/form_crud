@@ -83,6 +83,7 @@ input.button, .button {
     border: 1px solid #306bc1;
 }
 .button:hover {cursor: pointer; color: #cc0000; background-color: #ffffff;}
+#content {background-color: #fff;}
 h1 {
     color: #444;
     background-color: transparent;
@@ -178,55 +179,22 @@ h1 {
 
 h1 .unread {font-size: 12px; float: right; background: transparent url('../images/logout.png') left center no-repeat; padding-left: 20px;}
 h1 .unread a {text-decoration: none; color: #ff3333;}
+
+/* icon */
 .edit {
     background: transparent url("../images/icon_edit.png") center center no-repeat;
     padding: 2px 8px 2px 8px;
     color: threedface;
     text-decoration: none;
 }
-.edit:hover {color: threedface; }
+
 .delete {
-    background: transparent url("../images/cancel.png") center center no-repeat;
+    background: transparent url("../images/icon_delete.png") center center no-repeat;
     padding: 2px 8px 2px 8px;
     color: threedface;
     text-decoration: none;
 }
-.delete:hover {color: threedface; }
-.save {
-    background: transparent url("../images/filesave.png") center center no-repeat;
-    padding: 2px 8px 2px 8px;
-    color: threedface;
-    text-decoration: none;
-}
-.save:hover {color: threedface; }
-.download {
-    background: transparent url("../images/download.png") center center no-repeat;
-    padding: 2px 8px 2px 8px;
-    color: threedface;
-    text-decoration: none;
-}
-.download:hover {color: threedface; }
-.attach {
-    background: transparent url("../images/attach_act.png") center center no-repeat;
-    padding: 2px 8px 2px 8px;
-    color: threedface;
-    text-decoration: none;
-}
-.attach:hover {color: threedface; }
-.read {
-    background: transparent url("../images/view.png") center center no-repeat;
-    padding: 2px 8px 2px 8px;
-    color: threedface;
-    text-decoration: none;
-}
-.read:hover {color: threedface; }
-.print {
-    background: transparent url("../images/print.png") center center no-repeat;
-    padding: 2px 8px 2px 8px;
-    color: threedface;
-    text-decoration: none;
-}
-.print:hover {color: threedface; }
+
 .load {
     background: transparent url("../images/ajax-loader.gif") center center no-repeat;
     padding: 8px;
@@ -241,7 +209,11 @@ h1 .unread a {text-decoration: none; color: #ff3333;}
 /* auto complete */
 
 .ui-autocomplete { position: absolute; cursor: pointer; }
-.ui-autocomplete-loading { background: white url('../images/ui-anim_basic_16x16.gif') right center no-repeat; }
+.ui-autocomplete-loading { background: white url('../images/ajax-loader.gif') right center no-repeat; }
 
 html .ui-autocomplete { width: auto; max-height: 200px; overflow-y: scroll; overflow-x: hidden; }
 .ui-menu .ui-menu-item { margin:0; padding: 0; zoom: 1; float: left; clear: left; width: auto; font-size:80%; }
+
+.ui-datepicker-calendar tr, .ui-datepicker-calendar td, .ui-datepicker-calendar td a, .ui-datepicker-calendar th{font-size:inherit;}
+div.ui-datepicker{font-size:12px;width:inherit;height:inherit;}
+.ui-datepicker-title span{font-size:12px;}

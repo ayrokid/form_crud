@@ -41,18 +41,9 @@ function new_page(page, pjg){
     params += ', fullscreen=yes,scrollbars=yes';
     window.open(page,'_blank', params);
 }  
-function myformatter(date){
+function dateonly(date){
     var y = date.getFullYear();
     var m = date.getMonth()+1;
     var d = date.getDate();
-    return (d<10?('0'+d):d)+'/'+(m<10?('0'+m):m)+'/'+y;
-}
-function datetime(date){
-    var y = date.getFullYear();
-    var m = date.getMonth()+1;
-    var d = date.getDate();
-    var h = date.getHours();
-    var i = date.getMinutes();
-    var s = date.getSeconds();
-    return (d<10?('0'+d):d)+'/'+(m<10?('0'+m):m)+'/'+y+' '+h+':'+i+':'+s;
+    return d+'-'+m+'-'+y;
 }

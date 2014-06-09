@@ -15,12 +15,21 @@
     <link rel="stylesheet" href="<?php echo path_css('style.css'); ?>" type="text/css" />
     <link type="text/css" href="<?php echo path_css('ui-lightness/jquery-ui-1.10.3.custom.css'); ?>" rel="stylesheet" />
     <link href="<?php echo path_css("datepicker.css"); ?>" rel="stylesheet" />
-    <script src="<?php echo path_js(); ?>jquery.min.js" type="text/javascript"></script>
+    <script src="<?php echo path_js('jquery.min.js'); ?>" type="text/javascript"></script>
+    <script src="<?php echo path_js('jquery-ui.js'); ?>" type="text/javascript"></script>
+    <script src="<?php echo path_js('niceditor/nicEdit.js'); ?>" type="text/javascript"></script>
     
     <link rel="stylesheet" type="text/css" href="<?php echo path_js('easyui/themes/default/easyui.css'); ?>">
     <link rel="stylesheet" type="text/css" href="<?php echo path_js('easyui/themes/icon.css'); ?>">
     <script type="text/javascript" src="<?php echo path_js('easyui/jquery.easyui.min.js'); ?>"></script>
     <script src="<?php echo path_js('fun.jquery.js'); ?>" type="text/javascript"></script>
+    <script>
+    //<![CDATA[
+    bkLib.onDomLoaded(function() {
+        new nicEditor({uploadURI: "<?php echo path_upload(); ?>"}).panelInstance('content');
+    });
+    //]]>
+    </script>
 </head>
 <body>
 
