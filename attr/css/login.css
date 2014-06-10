@@ -1,0 +1,138 @@
+/* 
+    Document   : style
+    Created on : 19 Jul 14, 10:24:57
+    Author     : yanun
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+body {
+    font: 13px/20px normal Helvetica, Arial, sans-serif;
+    color: #000;
+}
+
+h1 {
+    color: #000;
+    background-color: transparent;
+    border-bottom: 1px solid #D0D0D0;
+    font-size: 19px;
+    font-weight: normal;
+    margin: 0 0 1px 0;
+    padding: 14px 15px 10px 15px;
+}
+
+h1 span{color: red;}
+
+form a { text-decoration: none;}
+
+input { 
+    padding: 5px;
+    border: 1px solid #cccccc;
+    font-size: 16px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+}
+
+#body{
+    margin: 0 15px;
+}
+
+p.footer{
+    text-align: right;
+    font-size: 11px;
+    border-top: 1px solid #D0D0D0;
+    line-height: 32px;
+    padding: 0 10px 0 10px;
+    margin: 20px 0 0 0;
+}
+
+.title {
+    border: 0px solid; 
+    width: 200px; 
+    text-align: center;
+    text-transform: uppercase;
+}
+.title h2 {
+    font: normal 40px Arial;
+    margin: 0 auto;
+    border-bottom: 1px solid;
+    width: 165px;
+}
+.title span {font-size: 11px;}
+.title strong {background-color: #f15929; padding: 2px 5px; color: #ffffff;}
+
+#container{
+    margin: 60px auto;
+    width: 340px;
+    border: 1px solid #D0D0D0;     
+    position: relative;   
+    background-color: #ffffff;        
+}
+
+#container:before, #container:after{
+    z-index: -1;
+    position: absolute;
+    content: "";
+    bottom: 15px;
+    left: 10px;
+    width: 50%;
+    top: 80%;
+    max-width:300px;
+    background: #777;
+    -webkit-box-shadow: 0 15px 10px #777;
+    -moz-box-shadow: 0 15px 10px #777;
+    box-shadow: 0 15px 10px #777;
+    -webkit-transform: rotate(-3deg);
+    -moz-transform: rotate(-3deg);
+    -o-transform: rotate(-3deg);
+    -ms-transform: rotate(-3deg);
+    transform: rotate(-3deg);
+}
+#container:after
+{
+    -webkit-transform: rotate(3deg);
+    -moz-transform: rotate(3deg);
+    -o-transform: rotate(3deg);
+    -ms-transform: rotate(3deg);
+    transform: rotate(3deg);
+    right: 10px;
+    left: auto;
+}
+.text-small {
+    width: 100px;
+}
+
+.text-medium {
+    width: 200px;
+}
+
+.text-long {
+    width: 300px;
+}
+.error { font: normal 12px sans-serif; color: #ff6666;}
+
+.submit {
+    cursor: pointer;
+    border-radius: 2px;
+    padding: 5px 10px 5px 10px;
+    border: 1px solid #ccccff;
+    color: #4F5155;
+}
+
+.submit:hover {
+    color: #ff0000;
+    background-color: #ccccff;
+}
+
+.bottom {
+    margin-top: 150px;
+    margin-right: 20px;
+    text-align: right;
+    color: #4F5155;
+}
+.bottom a {color: #4F5155; text-decoration: none;}
+.bottom a:hover {color: #ff0000;}
+
+
+

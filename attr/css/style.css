@@ -1,0 +1,219 @@
+/* 
+    Document   : style
+    Created on : Jul 14, 2013, 12:58:17 PM
+    Author     : ayrokid
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+::selection{ background-color: #E13300; color: white; }
+::moz-selection{ background-color: #E13300; color: white; }
+::webkit-selection{ background-color: #E13300; color: white; }
+
+body {
+    background-color: #fff;
+    margin: 20px 40px;
+    font: 14px/20px normal Helvetica, Arial, sans-serif;
+    color: #4F5155;      
+}
+
+a {
+    color: #003399;
+    background-color: transparent;
+    font-weight: normal;
+    margin: 2px 0;
+}
+
+form a { text-decoration: none;}
+
+/* form elements */
+fieldset {
+    margin: 0;	padding: 0;
+    border: none;
+}
+legend {
+    display: none;
+}
+label {
+    display:block;
+    font-weight:bold;
+    margin: 7px 0;
+    color: #333333;
+}
+input[type='text'], select {
+    padding:4px 3px;
+    font: normal 13px Verdana, sans-serif;
+    color:#777;
+    margin: 2px 0;
+    border: 1px solid #99ccff;
+    position: inherit;
+    display: inline-block;
+    text-transform: capitalize;
+}
+
+textarea {
+    width:400px;
+    padding:3px;
+    font: normal 1em Verdana, sans-serif; 
+    height:80px;
+    display:block;
+    color:#777;
+    border: 1px solid #99ccff;
+    text-transform: capitalize;
+}
+#form {
+    border: 0px solid #cccccc;
+}
+#form table {border-collapse: collapse; width: 100%;}
+#form table tr {
+    border: 1px solid #cccccc;    
+}
+#form table tr:nth-child(2n) {background-color: #f4f1f1;}
+#form table tr:last-child {background-color: #ffffff; }
+#form table tr td {padding: 5px;}
+#form table tr td:first-child {width: 150px;}
+#form table tr td:nth-child(2) {width: 5px;}
+input.button, .button { 
+    font: bold 12px Arial, Sans-serif; 
+    height: 28px;
+    margin: 0;
+    padding: 3px 5px; 
+    color: #fff;
+    background-color: #306bc1; 
+    border: 1px solid #306bc1;
+}
+.button:hover {cursor: pointer; color: #cc0000; background-color: #ffffff;}
+#content {background-color: #fff;}
+h1 {
+    color: #444;
+    background-color: transparent;
+    border-bottom: 1px solid #D0D0D0;
+    font-size: 19px;
+    font-weight: normal;
+    margin-bottom: -1px;
+    padding: 14px 15px 10px 15px;
+    text-transform: uppercase;
+}
+.t-center {text-align: center;}
+.error { font: normal 12px sans-serif; color: #ff6666;}
+#price, #dry, #pres, .number {text-align: right;}
+.text-small {
+    width: 100px;
+    display: inline-block;
+}
+
+.text-medium {
+    width: 200px;
+}
+
+.text-long {
+    width: 300px;
+}
+.submit {
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 5px 10px 5px 10px;
+    border: 1px solid #ccccff;
+    color: #4F5155;
+}
+
+.submit:hover {
+    color: #ff0000;
+    background-color: #ccccff;
+    box-shadow: 1px 1px 5px #888;
+}
+
+#body{
+    margin: 10px 15px 0 215px;
+    min-height: 450px;
+}
+
+.footer{
+    text-transform: capitalize;
+    font-size: 11px;
+    border-top: 1px solid #D0D0D0;
+    line-height: 32px;
+    padding: 0 10px;
+    margin: 20px 0 0 0;
+}
+
+#container{
+    margin: 10px;
+    border: 1px solid #D0D0D0;
+    -webkit-box-shadow: 0 0 8px #D0D0D0;
+    box-shadow: 0 0 8px #D0D0D0;
+    border-radius: 5px;
+}
+
+#left-menu{
+    float: left;
+    width: 180px;
+    border-right: 1px solid #D0D0D0;
+    padding: 0px 10px 10px 0px;
+    height: auto;
+    border-bottom: 1px solid #D0D0D0;
+    box-shadow: 3px 3px 8px #D0D0D0;
+}
+#left-menu h1 span{color: red;}
+#left-menu .master a {color: #009900;}
+#left-menu .report a {color: #ff6600;}
+#left-menu ul {
+    float: left;
+    list-style: none;
+    margin:0; padding: 10px 0 0 15px;
+}
+#left-menu ul li {
+ 
+}
+#left-menu ul li a {
+    display: block;
+    float: left;
+    padding: 0px 15px;
+    margin: 4px 0px;
+    color: #3399ff;	
+    text-decoration: none;
+    text-transform: capitalize;
+    background: transparent url("../images/icon.png") no-repeat -6px -141px;
+}
+#left-menu ul li a:hover { color: #ff3333;}
+
+h1 .unread {font-size: 12px; float: right; background: transparent url('../images/logout.png') left center no-repeat; padding-left: 20px;}
+h1 .unread a {text-decoration: none; color: #ff3333;}
+
+/* icon */
+.edit {
+    background: transparent url("../images/icon_edit.png") center center no-repeat;
+    padding: 2px 8px 2px 8px;
+    color: threedface;
+    text-decoration: none;
+}
+
+.delete {
+    background: transparent url("../images/icon_delete.png") center center no-repeat;
+    padding: 2px 8px 2px 8px;
+    color: threedface;
+    text-decoration: none;
+}
+
+.load {
+    background: transparent url("../images/ajax-loader.gif") center center no-repeat;
+    padding: 8px;
+    margin: auto;
+    color: threedface;
+    text-decoration: none;
+}
+#noimg { width: 200px; height: 220px; min-width: 200px; min-height: 220px; border: 1px solid #cccccc;}
+
+.footer a{text-decoration: none; color: #666666;}
+
+/* auto complete */
+
+.ui-autocomplete { position: absolute; cursor: pointer; }
+.ui-autocomplete-loading { background: white url('../images/ajax-loader.gif') right center no-repeat; }
+
+html .ui-autocomplete { width: auto; max-height: 200px; overflow-y: scroll; overflow-x: hidden; }
+.ui-menu .ui-menu-item { margin:0; padding: 0; zoom: 1; float: left; clear: left; width: auto; font-size:80%; }
+
+.ui-datepicker-calendar tr, .ui-datepicker-calendar td, .ui-datepicker-calendar td a, .ui-datepicker-calendar th{font-size:inherit;}
+div.ui-datepicker{font-size:12px;width:inherit;height:inherit;}
+.ui-datepicker-title span{font-size:12px;}

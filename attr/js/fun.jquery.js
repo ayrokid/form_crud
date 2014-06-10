@@ -1,0 +1,49 @@
+function confirm_page(page,msg,url){
+    $.messager.confirm('Confirm', msg, function(r){
+        if (r){
+            $.ajax({
+                url: page,
+                dataType: "html",
+                timeout: 10000,
+                success: function(data){
+                    var data = eval('(' + data + ')');
+                    if(data.back == 'true'){
+                        $.messager.alert('Info','Successfully','info', function(){ window.location = url; });                            
+                    }else{
+                        $.messager.alert('Error',data.msg,'error', function() { window.location = url; } );
+                    }
+                },error: function(x, t, m) {
+                    if(t==="timeout") {
+                        $("#form-info").hide();
+                        $.messager.alert('Error','timeout','error');
+                    }else {
+                        $("#form-info").hide();
+                        $.messager.alert('Error',m,'error');
+                    }
+                }   
+            });
+        }
+    });
+}
+function load_page(url){
+    $("#here").html("<center><p class='load'></p></center>");
+    $.ajax({
+        url: url,
+        dataType: "HTML",                       
+        success: function(data){
+            $("#here").html(data);
+        }         
+    });
+}
+function new_page(page, pjg){
+    var params  = 'width='+pjg;
+    params += ', height=650';
+    params += ', fullscreen=yes,scrollbars=yes';
+    window.open(page,'_blank', params);
+}  
+function dateonly(date){
+    var y = date.getFullYear();
+    var m = date.getMonth()+1;
+    var d = date.getDate();
+    return d+'-'+m+'-'+y;
+}
