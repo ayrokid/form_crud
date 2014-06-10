@@ -1,4 +1,5 @@
 <?php
+//pindah ke ubuntu
 /*
  *---------------------------------------------------------------
  * APPLICATION ENVIRONMENT
