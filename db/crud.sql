@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 12, 2014 at 04:21 PM
+-- Generation Time: Jun 12, 2014 at 04:24 PM
 -- Server version: 5.5.27
 -- PHP Version: 5.4.7
 
@@ -33,14 +33,15 @@ CREATE TABLE IF NOT EXISTS `artikel` (
   `ar_expired` enum('y','n') NOT NULL,
   `ar_exp_date` date NOT NULL,
   PRIMARY KEY (`arid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Dumping data for table `artikel`
 --
 
 INSERT INTO `artikel` (`arid`, `ar_title`, `ar_content`, `ar_expired`, `ar_exp_date`) VALUES
-(0, 'Special Offers', '<div align="left"><img src="http://localhost/freelance/form_crud/upload/media/16439Capture.PNG" width="392"><p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus \r\nmollis interdum.\r\n                    Morbi leo risus, porta ac consectetur ac, vestibulum\r\n at eros. Cras mattis consectetur purus sit amet fermentum.\r\n                </p>\r\n                <p>Donec id elit non mi porta gravida at eget metus. \r\nMaecenas faucibus mollis interdum.\r\n                    Morbi leo risus, porta ac consectetur ac, vestibulum\r\n at eros. Cras mattis consectetur purus sit amet fermentum.\r\n                </p><br></div>', 'y', '2014-06-12');
+(0, 'Special Offers', '<div align="left"><img src="http://localhost/freelance/form_crud/upload/media/16439Capture.PNG" width="392"><p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus \r\nmollis interdum.\r\n                    Morbi leo risus, porta ac consectetur ac, vestibulum\r\n at eros. Cras mattis consectetur purus sit amet fermentum.\r\n                </p>\r\n                <p>Donec id elit non mi porta gravida at eget metus. \r\nMaecenas faucibus mollis interdum.\r\n                    Morbi leo risus, porta ac consectetur ac, vestibulum\r\n at eros. Cras mattis consectetur purus sit amet fermentum.\r\n                </p><br></div>', 'y', '2014-06-12'),
+(1, 'The right guide, for the right person', 'Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque\r\n ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at,\r\n tempus viverra turpis.', 'n', '0000-00-00');
 
 -- --------------------------------------------------------
 
