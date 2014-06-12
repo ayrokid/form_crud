@@ -188,8 +188,7 @@ input.button, .button {
     margin-bottom: 4px;
     text-transform: capitalize; font-weight: normal;
 }
-#body article p.text {
-    margin-left: 10px;     
+#body article p.text {     
     text-align: justify;
     display: block;
 }
