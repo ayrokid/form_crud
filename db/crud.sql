@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 3.4.5
+-- version 3.5.2.2
 -- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generation Time: Jun 11, 2014 at 05:59 AM
--- Server version: 5.5.16
--- PHP Version: 5.3.8
+-- Host: 127.0.0.1
+-- Generation Time: Jun 12, 2014 at 04:21 PM
+-- Server version: 5.5.27
+-- PHP Version: 5.4.7
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -28,53 +28,19 @@ SET time_zone = "+00:00";
 
 CREATE TABLE IF NOT EXISTS `artikel` (
   `arid` int(11) NOT NULL AUTO_INCREMENT,
-  `ar_title` varchar(50) CHARACTER SET utf8 NOT NULL,
-  `ar_content` text CHARACTER SET utf8 NOT NULL,
-  `ar_expired` enum('y','n') CHARACTER SET utf8 NOT NULL,
+  `ar_title` varchar(50) NOT NULL,
+  `ar_content` text NOT NULL,
+  `ar_expired` enum('y','n') NOT NULL,
   `ar_exp_date` date NOT NULL,
   PRIMARY KEY (`arid`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=17 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
 -- Dumping data for table `artikel`
 --
 
 INSERT INTO `artikel` (`arid`, `ar_title`, `ar_content`, `ar_expired`, `ar_exp_date`) VALUES
-(1, 'tes', '', 'y', '0000-00-00'),
-(2, 'coba', '', 'y', '2014-06-25'),
-(3, 'dsadsadsa', 'fnfhroweroiwrojiw<br>', 'n', '0000-00-00'),
-(4, 'dsadsadsa', 'fnfhroweroiwrojiw<br>', 'n', '0000-00-00'),
-(5, '', '<br>', 'n', '0000-00-00'),
-(6, '', '', 'y', '2014-06-17'),
-(7, '65464', '', 'y', '2014-06-10'),
-(8, 'df', '', 'n', '0000-00-00'),
-(9, '', 'sdada<br>', 'n', '0000-00-00'),
-(10, 'dsada', 'sdadada<br>', 'n', '0000-00-00'),
-(11, '', '', 'n', '0000-00-00'),
-(12, '', '', 'n', '0000-00-00'),
-(13, 'sdadad', 'sadadsa<br>', 'n', '0000-00-00'),
-(14, 'dsda', 'dsadadadasdasd<br>', 'y', '2014-06-26'),
-(15, 'dsada', 'dsadsadad<br>', 'y', '2014-06-26'),
-(16, 'gambar', 'dsadada<img src="http://i.imgur.com/akuymhV.png" width="392"><br>', 'n', '0000-00-00');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `numerator`
---
-
-CREATE TABLE IF NOT EXISTS `numerator` (
-  `code` varchar(5) NOT NULL,
-  `value` varchar(10) NOT NULL,
-  PRIMARY KEY (`code`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `numerator`
---
-
-INSERT INTO `numerator` (`code`, `value`) VALUES
-('FO', '002');
+(0, 'Special Offers', '<div align="left"><img src="http://localhost/freelance/form_crud/upload/media/16439Capture.PNG" width="392"><p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus \r\nmollis interdum.\r\n                    Morbi leo risus, porta ac consectetur ac, vestibulum\r\n at eros. Cras mattis consectetur purus sit amet fermentum.\r\n                </p>\r\n                <p>Donec id elit non mi porta gravida at eget metus. \r\nMaecenas faucibus mollis interdum.\r\n                    Morbi leo risus, porta ac consectetur ac, vestibulum\r\n at eros. Cras mattis consectetur purus sit amet fermentum.\r\n                </p><br></div>', 'y', '2014-06-12');
 
 -- --------------------------------------------------------
 
