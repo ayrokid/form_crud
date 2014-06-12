@@ -55,6 +55,12 @@ $(function(){
         changeYear: true,
         dateFormat:'dd-mm-yy'		
     });
+    
+    var exp = $('#expired').val();
+    if(exp == 'y'){
+        $(".date_exp").show(); 
+    }
+    
     $("#expired").change(function(){
         var ex = $(this).val();
         if(ex == 'y'){

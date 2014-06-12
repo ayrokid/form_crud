@@ -39,6 +39,7 @@
         <h1>CMS <span>EDITOR</span></h1>
         <ul class="master">
             <li><?php echo anchor("artikel", 'artikel'); ?></li>
+            <li><?php echo anchor("artikel/views", 'view'); ?></li>
         </ul>
     </div>
     

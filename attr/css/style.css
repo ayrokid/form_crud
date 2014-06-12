@@ -61,10 +61,38 @@ textarea {
     border: 1px solid #99ccff;
     text-transform: capitalize;
 }
+
+h1 {
+    color: #444;
+    background-color: transparent;
+    border-bottom: 1px solid #D0D0D0;
+    font-size: 19px;
+    font-weight: normal;
+    margin-bottom: -1px;
+    padding: 14px 15px 10px 15px;
+    text-transform: uppercase;
+}
+.t-center {
+    text-align: center;
+}
+.error { 
+    font: normal 12px sans-serif; 
+    color: #ff6666;
+}
+#price, #dry, #pres, .number {
+    text-align: right;
+}
+.text-small {
+    width: 100px;
+    display: inline-block;
+}
 #form {
     border: 0px solid #cccccc;
 }
-#form table {border-collapse: collapse; width: 100%;}
+#form table {
+    border-collapse: collapse; 
+    width: 100%;
+}
 #form table tr {
     border: 1px solid #cccccc;    
 }
@@ -82,30 +110,14 @@ input.button, .button {
     background-color: #306bc1; 
     border: 1px solid #306bc1;
 }
-.button:hover {cursor: pointer; color: #cc0000; background-color: #ffffff;}
-#content {background-color: #fff;}
-h1 {
-    color: #444;
-    background-color: transparent;
-    border-bottom: 1px solid #D0D0D0;
-    font-size: 19px;
-    font-weight: normal;
-    margin-bottom: -1px;
-    padding: 14px 15px 10px 15px;
-    text-transform: uppercase;
+.button:hover {
+    cursor: pointer; 
+    color: #cc0000; 
+    background-color: #ffffff;
 }
-.t-center {text-align: center;}
-.error { font: normal 12px sans-serif; color: #ff6666;}
-#price, #dry, #pres, .number {text-align: right;}
-.text-small {
-    width: 100px;
-    display: inline-block;
-}
-
 .text-medium {
     width: 200px;
 }
-
 .text-long {
     width: 300px;
 }
@@ -116,25 +128,10 @@ h1 {
     border: 1px solid #ccccff;
     color: #4F5155;
 }
-
 .submit:hover {
     color: #ff0000;
     background-color: #ccccff;
     box-shadow: 1px 1px 5px #888;
-}
-
-#body{
-    margin: 10px 15px 0 215px;
-    min-height: 450px;
-}
-
-.footer{
-    text-transform: capitalize;
-    font-size: 11px;
-    border-top: 1px solid #D0D0D0;
-    line-height: 32px;
-    padding: 0 10px;
-    margin: 20px 0 0 0;
 }
 
 #container{
@@ -143,6 +140,7 @@ h1 {
     -webkit-box-shadow: 0 0 8px #D0D0D0;
     box-shadow: 0 0 8px #D0D0D0;
     border-radius: 5px;
+    background-color: #fff;
 }
 
 #left-menu{
@@ -175,7 +173,46 @@ h1 {
     text-transform: capitalize;
     background: transparent url("../images/icon.png") no-repeat -6px -141px;
 }
+
 #left-menu ul li a:hover { color: #ff3333;}
+
+#body{
+    margin: 10px 15px 0 215px;
+    min-height: 450px;
+}
+#body article {
+    border-bottom: 1px solid #999999;
+    margin-right: 6em; 
+}
+#body article h2 {
+    margin-bottom: 4px;
+    text-transform: capitalize; font-weight: normal;
+}
+#body article p.text {
+    margin-left: 10px;     
+    text-align: justify;
+    display: block;
+}
+#body article p .text p {
+    border: 1px solid;
+}
+#body article img {
+    width: 150px;
+    float: left;
+    margin-right: 10px;
+}
+#body article i {
+    font-size: 11px;
+}
+
+.footer{
+    text-transform: capitalize;
+    font-size: 11px;
+    border-top: 1px solid #D0D0D0;
+    line-height: 32px;
+    padding: 0 10px;
+    margin: 20px 0 0 0;
+}
 
 h1 .unread {font-size: 12px; float: right; background: transparent url('../images/logout.png') left center no-repeat; padding-left: 20px;}
 h1 .unread a {text-decoration: none; color: #ff3333;}
@@ -207,13 +244,13 @@ h1 .unread a {text-decoration: none; color: #ff3333;}
 .footer a{text-decoration: none; color: #666666;}
 
 /* auto complete */
-
 .ui-autocomplete { position: absolute; cursor: pointer; }
 .ui-autocomplete-loading { background: white url('../images/ajax-loader.gif') right center no-repeat; }
 
 html .ui-autocomplete { width: auto; max-height: 200px; overflow-y: scroll; overflow-x: hidden; }
 .ui-menu .ui-menu-item { margin:0; padding: 0; zoom: 1; float: left; clear: left; width: auto; font-size:80%; }
 
+/* datepicker */
 .ui-datepicker-calendar tr, .ui-datepicker-calendar td, .ui-datepicker-calendar td a, .ui-datepicker-calendar th{font-size:inherit;}
 div.ui-datepicker{font-size:12px;width:inherit;height:inherit;}
 .ui-datepicker-title span{font-size:12px;}

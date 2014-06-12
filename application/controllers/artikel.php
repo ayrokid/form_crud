@@ -81,5 +81,12 @@ Class Artikel extends Application {
         echo json_encode(array('msg' => $msg, 'back' => $back));
     }
     
+    public function views(){
+        $this->subTitle = 'Lihat Artikel';
+        $this->content  = "artikel/view";
+        $this->dataContent = $this->sql->select_result("SELECT * FROM artikel ORDER BY arid DESC ");
+        $this->view();
+    }
+    
 }
 
